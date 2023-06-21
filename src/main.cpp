@@ -222,7 +222,16 @@ int volume (){
   Serial.print(val);
   Serial.print("\n");
   return val;
+}
 
+int light (){
+  int lumiere = 0;
+  float sensor;
+  lumiere = analogRead(35);
+  lumiere = map(lumiere, 0, 2500, 0, 100);
+  
+  Serial.print(lumiere);
+  return lumiere;
 }
 
 void loop() {
@@ -230,8 +239,9 @@ void loop() {
   //temperature_humidity_read();
   //gps_read();
   //course_and_speed();
-  altitude();
-  volume();
+  //altitude();
+  //volume();
+  light();
 
 
   Serial.print("\n\n");
